@@ -87,7 +87,7 @@ client.on('message', async msg => {
                     .setDescription(`
                     ${videos.map(video2 => `${++index}. **${video2.title}**`).join('\n')}`)
                     
-					.setColor("#f7abab")
+					.setColor("RANDOM")
 					msg.channel.sendEmbed(embed1).then(message =>{message.delete(20000)})
 					
 /////////////////					
@@ -125,7 +125,7 @@ client.on('message', async msg => {
 		serverQueue.connection.dispatcher.end('Ok, skipped!');
         return undefined;
         
-	} else if (command === `leave`) {
+	} else if (command === `stop`) {
 
 		if (!msg.member.voiceChannel) return msg.channel.send("You Must be in a Voice channel to Run the Music commands!");
         if (!serverQueue) return msg.channel.send("There is no Queue to stop!!");
@@ -134,7 +134,7 @@ client.on('message', async msg => {
 		serverQueue.connection.dispatcher.end('Ok, stopped & disconnected from your Voice channel');
         return undefined;
         
-	} else if (command === `vol`) {
+	} else if (command === `volume`) {
 
 		if (!msg.member.voiceChannel) return msg.channel.send("You Must be in a Voice channel to Run the Music commands!");
 		if (!serverQueue) return msg.channel.send('You only can use this command while music is playing!');
