@@ -369,7 +369,7 @@ client.on('message', async msg => {
         
         return msg.channel.send(`Volume Now is **${args[1]}**`);
 
-	} else if (command === `queue`) {
+	} else if (command === `q`) {
 		
 		if (!serverQueue) return msg.channel.send('There is no Queue!!');
 		let index = 0;
